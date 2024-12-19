@@ -1,0 +1,14 @@
+C:\Users\CoryDebono\source\repos\PokerGame\PokerGame\obj\Debug\net8.0\PokerGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CoryDebono\source\repos\PokerGame\PokerGame\obj\Debug\net8.0\PokerGame.AssemblyInfoInputs.cache
+C:\Users\CoryDebono\source\repos\PokerGame\PokerGame\obj\Debug\net8.0\PokerGame.AssemblyInfo.cs
+C:\Users\CoryDebono\source\repos\PokerGame\PokerGame\obj\Debug\net8.0\PokerGame.csproj.CoreCompileInputs.cache
+C:\Users\CoryDebono\source\repos\PokerGame\PokerGame\bin\Debug\net8.0\PokerGame.exe
+C:\Users\CoryDebono\source\repos\PokerGame\PokerGame\bin\Debug\net8.0\PokerGame.deps.json
+C:\Users\CoryDebono\source\repos\PokerGame\PokerGame\bin\Debug\net8.0\PokerGame.runtimeconfig.json
+C:\Users\CoryDebono\source\repos\PokerGame\PokerGame\bin\Debug\net8.0\PokerGame.dll
+C:\Users\CoryDebono\source\repos\PokerGame\PokerGame\bin\Debug\net8.0\PokerGame.pdb
+C:\Users\CoryDebono\source\repos\PokerGame\PokerGame\obj\Debug\net8.0\PokerGame.dll
+C:\Users\CoryDebono\source\repos\PokerGame\PokerGame\obj\Debug\net8.0\refint\PokerGame.dll
+C:\Users\CoryDebono\source\repos\PokerGame\PokerGame\obj\Debug\net8.0\PokerGame.pdb
+C:\Users\CoryDebono\source\repos\PokerGame\PokerGame\obj\Debug\net8.0\PokerGame.genruntimeconfig.cache
+C:\Users\CoryDebono\source\repos\PokerGame\PokerGame\obj\Debug\net8.0\ref\PokerGame.dll
