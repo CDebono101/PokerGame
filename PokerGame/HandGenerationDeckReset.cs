@@ -13,7 +13,7 @@ namespace PokerGame
 
         //Randmon generation of numbers
 
-        public static void CardGen()
+        public static void CardGen(PlayerProfile _playerOne)
         {
             Console.Clear();
             List<int> pokerHand = new List<int>();
@@ -26,12 +26,12 @@ namespace PokerGame
                 pokerHand.Add(suitGen);
             }
 
-            HandSeperation(pokerHand);
+            HandSeperation(_playerOne, pokerHand);
         }
 
         // Seperates the suits and the cards into seperate lists.
 
-        private static void HandSeperation(List<int> _pokerHand)
+        private static void HandSeperation(PlayerProfile _playerOne, List<int> _pokerHand)
         {
             List<int> suitsInHand = new List<int>();
             List<int> cardsInHand = new List<int>();
@@ -50,12 +50,12 @@ namespace PokerGame
                 }
             }
 
-            HandBuilder(suitsInHand, cardsInHand);
+            HandBuilder(_playerOne, suitsInHand, cardsInHand);
         }
 
         //Handbuilder method builds hand by creating an object list.
 
-        private static void HandBuilder(List<int> _suitsInHand, List<int> _cardsInHand)
+        private static void HandBuilder(PlayerProfile _playerOne, List<int> _suitsInHand, List<int> _cardsInHand)
         {
             List<PlayerCardData> playerHand = new List<PlayerCardData>();
 
@@ -68,10 +68,13 @@ namespace PokerGame
            
             if (doopCheck == true)
             {
-                CardGen();
+                CardGen(_playerOne);
             }
             else
             {
+                float winnings = HandClassification.BreakHand(playerHand);
+
+                Game.GameMainTwo(_playerOne, playerHand, winnings);
                 //Continue to HandClassification.
             }
 

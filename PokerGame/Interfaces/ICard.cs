@@ -8,15 +8,8 @@ namespace PokerGame.Interfaces
 {
     public interface ICard
     {
-        public int Card { 
-            get; 
-            set; 
-        }
+        public int Card { get; set; }
 
-        public int Suit
-        {
-            get;
-            set;
-        }
+        public int Suit { get; set; }
     }
 }

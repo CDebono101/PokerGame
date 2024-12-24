@@ -39,10 +39,10 @@ namespace PokerGame
             MainMenu(playerOne);
         }
 
-        public static void MainMenu(PlayerProfile playerOne)
+        public static void MainMenu(PlayerProfile _playerOne)
         {
             Console.Clear();
-            Console.WriteLine("Welcome " + playerOne.Name + "\n");
+            Console.WriteLine("Welcome " + _playerOne.Name + "\n");
             Console.WriteLine("Please select an option:\n");
             Console.WriteLine("1. Play");
             Console.WriteLine("2. View Balance");
@@ -51,7 +51,7 @@ namespace PokerGame
             Console.WriteLine("5. Exit");
             Console.WriteLine();
             string? userChoice = Console.ReadLine();
-            UserInputCheck(playerOne, userChoice);
+            UserInputCheck(_playerOne, userChoice!);
 
 
         }
@@ -77,7 +77,7 @@ namespace PokerGame
             switch (_userChoice)
             {
                 case "1":
-
+                    Game.GameMainAnimation(playerOne);
                     break;
 
                 case "2":
@@ -91,7 +91,7 @@ namespace PokerGame
                 case "3":
                     Console.Clear();
                     Console.WriteLine("Insert the amount you wish to top up.\n");
-                    string topUp = Console.ReadLine();
+                    string? topUp = Console.ReadLine();
                     int topUpI = Convert.ToInt32(topUp);
                     playerOne.AddBal(topUpI);
                     Console.Clear();

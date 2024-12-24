@@ -6,6 +6,4 @@ public class MainClass
     {
         Menus.CreateOrExitProfile();
     }
-
-
 }
