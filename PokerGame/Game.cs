@@ -53,7 +53,9 @@ namespace PokerGame
             }
         }
 
-        public static void GameMainTwo(PlayerProfile _playerOne, List<PlayerCardData> playerHand, float _winnings) 
+        //Menu after game is played first time. Multiplier and bet is updated.
+
+        public static void GameMainTwo(PlayerProfile _playerOne, List<PlayerCardData> playerHand, float _multiplier, float _betamountF) 
         {
             Console.Clear();
             Console.WriteLine("                                                         " + "Console Poker" + "                                                         ");
@@ -66,13 +68,14 @@ namespace PokerGame
 
             foreach (PlayerCardData playerCard in playerHand)
             {
-                Console.Write(playerCard.GetCard());
+                Console.Write(playerCard.GetCard() + " ");
             }
 
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine("Multiplier: " + _winnings.ToString());
+            _playerOne.UpdateBal(_multiplier, _betamountF);
+            Console.WriteLine("Multiplier: " + _multiplier.ToString());
             Console.WriteLine(_playerOne.GetBal());
             Console.Write("Bet amount: ");
             string? betAmount = Console.ReadLine();
@@ -91,7 +94,7 @@ namespace PokerGame
 
         private static void CheckBet(PlayerProfile _playerOne, string _betAmount)
         {
-            if(_betAmount.Equals(" "))
+            if(_betAmount.Equals(""))
             {
                 Console.WriteLine();
                 Console.WriteLine("Please insert a vaild bet...");
@@ -99,9 +102,7 @@ namespace PokerGame
                 Console.ReadKey();
                 GameMain(_playerOne);
             }
-
-            int betAmountI = Convert.ToInt32(_betAmount);
-            float betAmountF = (float)betAmountI;
+            float betAmountF = float.Parse(_betAmount);
 
             if (betAmountF > _playerOne.Bal)
             {
@@ -113,7 +114,7 @@ namespace PokerGame
             }
             else
             {
-                HandGenerationDeckReset.CardGen(_playerOne);
+                HandGenerationDeckReset.CardGen(_playerOne, betAmountF);
             }
         }
     }

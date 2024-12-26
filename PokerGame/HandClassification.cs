@@ -32,6 +32,7 @@ namespace PokerGame
         {
             _cards.Sort();
 
+            bool quads = HandBool.Quads(_cards);
             bool flush = HandBool.Flush(_suits);
             bool straight = HandBool.Stright(_cards);
             bool trips = HandBool.Trips(_cards);
@@ -41,6 +42,10 @@ namespace PokerGame
             if (flush == true && straight == true)
             {
                 return 1000;
+            }
+            else if (quads == true)
+            {
+                return 500;
             }
             else if (trips == true && pair == true)
             {

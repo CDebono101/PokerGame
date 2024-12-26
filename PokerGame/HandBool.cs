@@ -8,7 +8,21 @@ namespace PokerGame
 {
     public class HandBool
     {
-        // Add quads
+        public static bool Quads(List<int> _cards)
+        {
+            if (_cards[0] == _cards[1] && _cards[1] == _cards[2] && _cards[2] == _cards[3])
+            {
+                return true;
+            }
+            else if (_cards[1] == _cards[2] && _cards[2] == _cards[3] && _cards[3] == _cards[4])
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public static bool Flush(List<int> _suits)
         {
             if (_suits[0] == _suits[1] && _suits[1] == _suits[2] && _suits[2] == _suits[3] && _suits[3] == _suits[4])
@@ -32,6 +46,8 @@ namespace PokerGame
                 return false;
             }
         }
+
+        // Fix trips
 
         public static bool Trips(List<int> _cards)
         {
@@ -71,7 +87,7 @@ namespace PokerGame
         
         public static bool Pair(List<int> _cards)
         {
-            if (_cards[0] == _cards[1] && _cards[1] != _cards[2] && _cards[2] != _cards[3])
+            if (_cards[0] == _cards[1] && _cards[1] != _cards[2])
             {
                 return true;
             }

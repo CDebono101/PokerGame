@@ -66,5 +66,12 @@ namespace PokerGame
             return "Name has been updated to " + Name;
         }
 
+        public float UpdateBal(float _multiplier, float _betAmountF)
+        {
+            float winningAmount = _betAmountF * _multiplier;
+            Bal -= _betAmountF;
+            Bal += winningAmount;
+            return Bal;
+        }
     }
 }

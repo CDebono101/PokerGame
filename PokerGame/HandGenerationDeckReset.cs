@@ -13,7 +13,7 @@ namespace PokerGame
 
         //Randmon generation of numbers
 
-        public static void CardGen(PlayerProfile _playerOne)
+        public static void CardGen(PlayerProfile _playerOne, float _betAmountF)
         {
             Console.Clear();
             List<int> pokerHand = new List<int>();
@@ -26,12 +26,12 @@ namespace PokerGame
                 pokerHand.Add(suitGen);
             }
 
-            HandSeperation(_playerOne, pokerHand);
+            HandSeperation(_playerOne, pokerHand, _betAmountF);
         }
 
         // Seperates the suits and the cards into seperate lists.
 
-        private static void HandSeperation(PlayerProfile _playerOne, List<int> _pokerHand)
+        private static void HandSeperation(PlayerProfile _playerOne, List<int> _pokerHand, float _betAmountF)
         {
             List<int> suitsInHand = new List<int>();
             List<int> cardsInHand = new List<int>();
@@ -50,12 +50,12 @@ namespace PokerGame
                 }
             }
 
-            HandBuilder(_playerOne, suitsInHand, cardsInHand);
+            HandBuilder(_playerOne, suitsInHand, cardsInHand, _betAmountF);
         }
 
         //Handbuilder method builds hand by creating an object list.
 
-        private static void HandBuilder(PlayerProfile _playerOne, List<int> _suitsInHand, List<int> _cardsInHand)
+        private static void HandBuilder(PlayerProfile _playerOne, List<int> _suitsInHand, List<int> _cardsInHand, float _betAmountF)
         {
             List<PlayerCardData> playerHand = new List<PlayerCardData>();
 
@@ -68,13 +68,13 @@ namespace PokerGame
            
             if (doopCheck == true)
             {
-                CardGen(_playerOne);
+                CardGen(_playerOne, _betAmountF);
             }
             else
             {
                 float winnings = HandClassification.BreakHand(playerHand);
 
-                Game.GameMainTwo(_playerOne, playerHand, winnings);
+                Game.GameMainTwo(_playerOne, playerHand, winnings, _betAmountF);
                 //Continue to HandClassification.
             }
 
